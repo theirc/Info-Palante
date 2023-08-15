@@ -18,7 +18,6 @@ export interface CustomMenuOverlayStrings extends MenuOverlayStrings {
   about: string;
 }
 
-// TODO Update footer items if needed.
 export function getFooterItems(
   strings: CustomMenuOverlayStrings,
   categories: ZendeskCategory[] | CategoryWithSections[]

@@ -1,19 +1,19 @@
 // This module implements a locale selection page.
 //
 // This page accepts an optional target pathname as a query parameter. It
-// displays a page that redirects to the pathname in the selected locale.
+// displays a page that re/directs to the pathname in the selected locale.
 import { default as LocaleSelectPageBase } from '@ircsignpost/signpost-base/dist/src/locale-select-page';
 import type { Lang } from '@ircsignpost/signpost-base/dist/src/locale-select-page';
 import Image from 'next/image';
 
 import { SITE_TITLE } from '../lib/constants';
+import logo from '../public/info-palante-logo.png';
 
 const langs: Lang[] = [
   {
-    langShort: 'en-us',
-    langLong: 'English',
+    langShort: 'es',
+    langLong: 'Español',
   },
-  // TODO: Add supported languages.
 ];
 
 /** The locale selection page.
@@ -31,9 +31,9 @@ export default function LocaleSelectPage() {
   return (
     <LocaleSelectPageBase
       siteTitle={SITE_TITLE}
-      message={'Please choose your preferred language'}
+      message={"Bienvenidos a Info Pa'lante."}
       langs={langs}
-      image={<span>TODO</span>}
+      image={<Image src={logo} alt="icon" />}
     />
   );
 }

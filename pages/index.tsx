@@ -13,6 +13,10 @@ import {
 import {
   CategoryWithSections,
   ZendeskCategory,
+  getArticle,
+  getCategories,
+  getCategoriesWithSections,
+  getTranslationsFromDynamicContent,
 } from '@ircsignpost/signpost-base/dist/src/zendesk';
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
@@ -51,13 +55,6 @@ import {
   populateSocialMediaLinks,
 } from '../lib/translations';
 import { getZendeskMappedUrl, getZendeskUrl } from '../lib/url';
-// TODO Use real Zendesk API implementation.
-import {
-  getArticle,
-  getCategories,
-  getCategoriesWithSections,
-  getTranslationsFromDynamicContent,
-} from '../lib/zendesk-fake';
 
 interface HomeProps {
   currentLocale: Locale;
@@ -112,7 +109,7 @@ const Home: NextPage<HomeProps> = ({
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const currentLocale: Locale = getLocaleFromCode(locale ?? 'en-us');
+  const currentLocale: Locale = getLocaleFromCode(locale ?? 'es');
   let dynamicContent = await getTranslationsFromDynamicContent(
     getZendeskLocaleId(currentLocale),
     COMMON_DYNAMIC_CONTENT_PLACEHOLDERS.concat(
