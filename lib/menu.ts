@@ -27,7 +27,6 @@ export function getFooterItems(
   return items;
 }
 
-// TODO Update menu items if needed.
 export function getMenuItems(
   strings: CustomMenuOverlayStrings,
   categories: ZendeskCategory[] | CategoryWithSections[],
@@ -74,6 +73,11 @@ function addMenuItemsInformation(
   strings: CustomMenuOverlayStrings,
   categories: ZendeskCategory[]
 ) {
+  items.push({
+    key: 'services',
+    label: 'Servicios',
+    href: '/#service-map',
+  });
   if (categories.length > 0) {
     items.push({
       key: 'information',
