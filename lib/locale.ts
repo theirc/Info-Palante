@@ -17,7 +17,7 @@ export const LOCALE_CODES_TO_CANONICAL_LOCALE_CODES: { [key: string]: string } =
 
 // Returns the effective locale given locale code.
 //
-// This function defaults to en-us in case we ended up in a situation where the locale is not recognized. It's defensive programming as this shouldn't happen.
+// This function defaults to es in case we ended up in a situation where the locale is not recognized. It's defensive programming as this shouldn't happen.
 export function getLocaleFromCode(code: string): Locale {
   return LOCALES[code] ?? LOCALES['es'];
 }

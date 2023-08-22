@@ -193,6 +193,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const populations = await getDirectusPopulationsServed(directus);
   const accessibility = await getDirectusAccessibility(directus);
 
+  const footerLinks = getFooterItems(
+    populateMenuOverlayStrings(dynamicContent),
+    categories
+  );
+
   return {
     props: {
       currentLocale,

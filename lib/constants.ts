@@ -1,7 +1,7 @@
 import { AlgoliaSearchIndex } from '@ircsignpost/signpost-base/dist/src/search-common';
 import { LatLngExpression } from 'leaflet';
 
-export const SITE_TITLE = 'Info Palante';
+export const SITE_TITLE = "Info Pa'lante";
 
 export const COUNTRY_ID = 21;
 

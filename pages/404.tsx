@@ -129,20 +129,18 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     categories,
     !!aboutUsArticle
   );
-
   const footerLinks = getFooterItems(
     populateMenuOverlayStrings(dynamicContent),
     categories
   );
-
   return {
     props: {
       currentLocale,
       strings,
       menuOverlayItems,
       categories,
-      title: strings.errorStrings.subtitle?.concat(' - ', SITE_TITLE),
       footerLinks,
+      title: strings.errorStrings.subtitle?.concat(' - ', SITE_TITLE),
     },
     revalidate: REVALIDATION_TIMEOUT_SECONDS,
   };
