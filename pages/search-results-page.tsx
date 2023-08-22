@@ -35,7 +35,7 @@ import {
   getZendeskLocaleId,
 } from '../lib/locale';
 import { getHeaderLogoProps } from '../lib/logo';
-import { getMenuItems } from '../lib/menu';
+import { getFooterItems, getMenuItems } from '../lib/menu';
 import {
   COMMON_DYNAMIC_CONTENT_PLACEHOLDERS,
   SEARCH_RESULTS_PLACEHOLDERS,
@@ -56,6 +56,7 @@ interface SearchResultsPageProps {
   siteUrl: string;
   // A map of dynamic content placeholders to their string values.
   dynamicContent: { [key: string]: string };
+  footerLinks?: MenuOverlayItem[];
 }
 
 export default function SearchResultsPage({
@@ -65,6 +66,7 @@ export default function SearchResultsPage({
   title,
   dynamicContent,
   siteUrl,
+  footerLinks,
 }: SearchResultsPageProps) {
   const { publicRuntimeConfig } = getConfig();
 
@@ -81,6 +83,7 @@ export default function SearchResultsPage({
       strings={strings}
       siteUrl={siteUrl}
       signpostVersion={publicRuntimeConfig?.version}
+      footerLinks={footerLinks}
       cookieBanner={
         <CookieBanner
           strings={populateCookieBannerStrings(dynamicContent)}
@@ -137,6 +140,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   const strings = populateSearchResultsPageStrings(dynamicContent);
 
+  const footerLinks = getFooterItems(
+    populateMenuOverlayStrings(dynamicContent),
+    categories
+  );
   return {
     props: {
       currentLocale,
@@ -145,6 +152,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       title: SITE_TITLE,
       siteUrl: getSiteUrl(),
       dynamicContent,
+      footerLinks,
     },
     revalidate: REVALIDATION_TIMEOUT_SECONDS,
   };

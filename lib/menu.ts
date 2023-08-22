@@ -23,7 +23,16 @@ export function getFooterItems(
   categories: ZendeskCategory[] | CategoryWithSections[]
 ): MenuOverlayItem[] {
   let items: MenuOverlayItem[] = [];
-  items.push({ key: 'home', label: strings.home, href: '/' });
+  items.push({
+    key: 'colombia',
+    label: 'Colombia',
+    href: 'https://infopalante.org',
+  });
+  items.push({
+    key: 'ecuador',
+    label: 'Ecuador',
+    href: 'https://infopalanteec.org',
+  });
   return items;
 }
 
