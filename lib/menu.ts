@@ -24,15 +24,42 @@ export function getFooterItems(
 ): MenuOverlayItem[] {
   let items: MenuOverlayItem[] = [];
   items.push({
-    key: 'colombia',
-    label: 'Colombia',
-    href: 'https://infopalante.org',
+    key: 'email',
+    label: 'Escríbenos',
+    href: 'mailto:info.palante@rescue.org',
+  });
+  items.push({
+    key: 'mapa-servicios',
+    label: 'Mapa de servicios del GIFMM',
+    href: 'https://mapeo-de-servicios.gifmm-colombia.site/',
+  });
+  items.push({
+    key: 'gifmm-contigo',
+    label: 'GIFMM Contigo',
+    href: 'https://gifmm-contigo.com/ ',
   });
   items.push({
     key: 'ecuador',
     label: 'Ecuador',
-    href: 'https://infopalanteec.org',
+    href: 'https://www.infopalanteec.org/',
   });
+  items.push({
+    key: 'centroamerica',
+    label: 'Centroamérica',
+    href: 'https://www.cuentanos.org/',
+  });
+  items.push({
+    key: 'México',
+    label: 'México',
+    href: 'https://www.infodigna.org',
+  });
+
+  items.push({
+    key: 'ee-uu',
+    label: 'EE.UU',
+    href: 'https://www.importami.org/',
+  });
+
   return items;
 }
 

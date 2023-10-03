@@ -78,9 +78,13 @@ export const HOME_PAGE_DYNAMIC_CONTENT_PLACEHOLDERS = [
   'default_banner_facebook_title',
   'default_banner_messenger_title',
   'default_banner_whatsapp_title',
+  'default_banner_whatsappchannel_title',
+  'default_banner_email_title',
   'info_palante_facebook_link',
   'info_palante_messenger_link',
   'info_palante_whatsapp_link',
+  'info_palante_whatsappchannel_link',
+  'info_palante_email_link',
   // Main body strings.
   'default_information_title',
   'info_palante_information_description',
@@ -108,6 +112,12 @@ export const HOME_PAGE_DYNAMIC_CONTENT_PLACEHOLDERS = [
   'default_seach_input_text',
   'default_contact_button_label',
   'default_view_service_label',
+  'default_contact_button_label',
+  'default_view_service_label',
+  'labelAccessibility',
+  'labelProvider',
+  'labelPopulations',
+  'labelServicesTypes',
 ];
 
 export const CATEGORY_PLACEHOLDERS = [
@@ -140,13 +150,21 @@ export function populateSocialMediaLinks(dynamicContent: {
       title: dynamicContent['default_banner_facebook_title'],
       href: dynamicContent['info_palante_facebook_link'],
     },
+    messengerLink: {
+      title: dynamicContent['default_banner_messenger_title'],
+      href: dynamicContent['info_palante_messenger_link'],
+    },
     whatsappLink: {
       title: dynamicContent['default_banner_whatsapp_title'],
       href: dynamicContent['info_palante_whatsapp_link'],
     },
-    messengerLink: {
-      title: dynamicContent['default_banner_messenger_title'],
-      href: dynamicContent['info_palante_messenger_link'],
+    whatsappChannelLink: {
+      title: dynamicContent['default_banner_whatsappchannel_title'],
+      href: dynamicContent['info_palante_whatsappchannel_link'],
+    },
+    emailLink: {
+      title: dynamicContent['default_banner_email_title'],
+      href: dynamicContent['info_palante_email_link'],
     },
   };
 }
@@ -194,6 +212,10 @@ export function populateServiceMapStrings(dynamicContent: {
     },
     popupStrings: populatePopupStrings(dynamicContent),
     labelSearchInput: { label: dynamicContent['default_seach_input_text'] },
+    labelAccessibility: dynamicContent['labelAccessibility'],
+    labelProvider: dynamicContent['labelProvider'],
+    labelPopulations: dynamicContent['labelPopulations'],
+    labelServicesTypes: dynamicContent['labelServicesTypes'],
   };
 }
 
@@ -275,8 +297,6 @@ export function getSelectTopicLabel(dynamicContent: {
 }): string {
   return dynamicContent['default_select_topic'];
 }
-
-// TODO(annkats): add populateServiceMapStrings() once Service map becomes a Shared component.
 
 export function populateArticleContentStrings(dynamicContent: {
   [key: string]: string;

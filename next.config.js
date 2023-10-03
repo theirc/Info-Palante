@@ -4,7 +4,7 @@ const pack = require('./package.json');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: false,
   // Keep in sync with locales configured in /lib/locale.ts.
   i18n: {
     locales: ['default', 'es'],
@@ -42,8 +42,8 @@ module.exports = withLess({
       // See full list of Ant styles here:
       // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
       modifyVars: {
-        'primary-color': '#1489A3',
-        'secondary-color': '#0475B5',
+        'primary-color': '#0475B5',
+        'secondary-color': '#1489A3',
         'accent-color': '#  0475B5',
         'info-color': '@accent-color',
         'alert-info-bg-color': '@accent-color',
@@ -60,14 +60,14 @@ module.exports = withLess({
         'layout-header-height': 'auto',
         'layout-header-min-height': '4.375rem',
         'layout-header-padding': '0',
-        'header-background-color': '#0475B5',
-        'header-text-color': 'white',
+        'header-background-color': 'white',
+        'header-text-color': '@primary-color',
         'header-banner-background-color':
-          'linear-gradient(@secondary-color, @primary-color)',
+          'linear-gradient(@primary-color, @secondary-color)',
         'header-banner-text-color': 'white',
         // Set search styles.
-        'search-icon-color': 'black',
-        'search-icon-bg-color': '#FDD44B',
+        'search-icon-color': 'white',
+        'search-icon-bg-color': '@primary-color',
         // Set card styles.
         'card-padding-base': '16px',
         'home-page-card-icon-color': '#141414',

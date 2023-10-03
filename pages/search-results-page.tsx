@@ -84,7 +84,6 @@ export default function SearchResultsPage({
       siteUrl={siteUrl}
       footerLinks={footerLinks}
       signpostVersion={publicRuntimeConfig?.version}
-      footerLinks={footerLinks}
       cookieBanner={
         <CookieBanner
           strings={populateCookieBannerStrings(dynamicContent)}
@@ -146,10 +145,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   const strings = populateSearchResultsPageStrings(dynamicContent);
 
-  const footerLinks = getFooterItems(
-    populateMenuOverlayStrings(dynamicContent),
-    categories
-  );
   return {
     props: {
       currentLocale,
