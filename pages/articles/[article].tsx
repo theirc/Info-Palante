@@ -13,6 +13,11 @@ import { createDefaultSearchBarProps } from '@ircsignpost/signpost-base/dist/src
 import {
   CategoryWithSections,
   ZendeskCategory,
+  getArticle,
+  getArticles,
+  getCategories,
+  getCategoriesWithSections,
+  getTranslationsFromDynamicContent,
 } from '@ircsignpost/signpost-base/dist/src/zendesk';
 import { GetStaticProps } from 'next';
 import getConfig from 'next/config';
@@ -48,14 +53,6 @@ import {
   populateMenuOverlayStrings,
 } from '../../lib/translations';
 import { getSiteUrl, getZendeskMappedUrl, getZendeskUrl } from '../../lib/url';
-// TODO Use real Zendesk API implemetation.
-import {
-  getArticle,
-  getArticles,
-  getCategories,
-  getCategoriesWithSections,
-  getTranslationsFromDynamicContent,
-} from '../../lib/zendesk-fake';
 
 interface ArticleProps {
   pageTitle: string;
@@ -157,12 +154,15 @@ async function getStaticParams() {
     )
   );
 
-  return articles.flat().map((article) => {
-    return {
-      article: article.id.toString(),
-      locale: article.locale,
-    };
-  });
+  return articles
+    .flat()
+    .filter((x) => x?.author_id !== 423757401494)
+    .map((article) => {
+      return {
+        article: article.id.toString(),
+        locale: article.locale,
+      };
+    });
 }
 
 export async function getStaticPaths() {

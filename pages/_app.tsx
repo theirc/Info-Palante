@@ -17,6 +17,7 @@ import '@ircsignpost/signpost-base/styles/responsive.less';
 import '@ircsignpost/signpost-base/styles/search-bar.less';
 import '@ircsignpost/signpost-base/styles/search-results-page.less';
 import '@ircsignpost/signpost-base/styles/select-menu.less';
+import '@ircsignpost/signpost-base/styles/service-content.less';
 import '@ircsignpost/signpost-base/styles/service-map.less';
 import '@ircsignpost/signpost-base/styles/map.less';
 import '@ircsignpost/signpost-base/styles/service-list.less';

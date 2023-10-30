@@ -18,17 +18,51 @@ export interface CustomMenuOverlayStrings extends MenuOverlayStrings {
   about: string;
 }
 
-// TODO Update footer items if needed.
 export function getFooterItems(
   strings: CustomMenuOverlayStrings,
   categories: ZendeskCategory[] | CategoryWithSections[]
 ): MenuOverlayItem[] {
   let items: MenuOverlayItem[] = [];
-  items.push({ key: 'home', label: strings.home, href: '/' });
+  items.push({
+    key: 'email',
+    label: 'Escríbenos',
+    href: 'mailto:info.palante@rescue.org',
+  });
+  items.push({
+    key: 'mapa-servicios',
+    label: 'Mapa de servicios del GIFMM',
+    href: 'https://mapeo-de-servicios.gifmm-colombia.site/',
+  });
+  items.push({
+    key: 'gifmm-contigo',
+    label: 'GIFMM Contigo',
+    href: 'https://gifmm-contigo.com/ ',
+  });
+  items.push({
+    key: 'ecuador',
+    label: 'Ecuador',
+    href: 'https://www.infopalanteec.org/',
+  });
+  items.push({
+    key: 'centroamerica',
+    label: 'Centroamérica',
+    href: 'https://www.cuentanos.org/',
+  });
+  items.push({
+    key: 'México',
+    label: 'México',
+    href: 'https://www.infodigna.org',
+  });
+
+  items.push({
+    key: 'ee-uu',
+    label: 'EE.UU',
+    href: 'https://www.importami.org/',
+  });
+
   return items;
 }
 
-// TODO Update menu items if needed.
 export function getMenuItems(
   strings: CustomMenuOverlayStrings,
   categories: ZendeskCategory[] | CategoryWithSections[],
@@ -75,6 +109,11 @@ function addMenuItemsInformation(
   strings: CustomMenuOverlayStrings,
   categories: ZendeskCategory[]
 ) {
+  items.push({
+    key: 'services',
+    label: 'Servicios',
+    href: '/#service-map',
+  });
   if (categories.length > 0) {
     items.push({
       key: 'information',

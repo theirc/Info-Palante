@@ -4,10 +4,10 @@ const pack = require('./package.json');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: false,
   // Keep in sync with locales configured in /lib/locale.ts.
   i18n: {
-    locales: ['default', 'en-us' /* TODO */],
+    locales: ['default', 'es'],
     defaultLocale: 'default',
     localeDetection: false,
   },
@@ -22,15 +22,14 @@ const nextConfig = {
       },
     ];
   },
-  // TODO: add images url to whitelist them
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: 'https',
-  //       hostname: 'signpost-greece.zendesk.com',
-  //     },
-  //   ],
-  // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'signpost-greece.zendesk.com',
+      },
+    ],
+  },
   publicRuntimeConfig: {
     version: pack.dependencies['@ircsignpost/signpost-base'],
   },
@@ -43,10 +42,9 @@ module.exports = withLess({
       // See full list of Ant styles here:
       // https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
       modifyVars: {
-        // TODO: Update theme colors
-        'primary-color': '#51258F',
-        'secondary-color': '#854ECA',
-        'accent-color': '#13C2C2',
+        'primary-color': '#0475B5',
+        'secondary-color': '#1489A3',
+        'accent-color': '#  0475B5',
         'info-color': '@accent-color',
         'alert-info-bg-color': '@accent-color',
         // Override Ant typography.
@@ -62,20 +60,20 @@ module.exports = withLess({
         'layout-header-height': 'auto',
         'layout-header-min-height': '4.375rem',
         'layout-header-padding': '0',
-        'header-background-color': '@primary-color',
-        'header-text-color': 'white',
+        'header-background-color': 'white',
+        'header-text-color': '@primary-color',
         'header-banner-background-color':
-          'linear-gradient(@secondary-color, @primary-color)',
+          'linear-gradient(@primary-color, @secondary-color)',
         'header-banner-text-color': 'white',
         // Set search styles.
-        'search-icon-color': 'black',
-        'search-icon-bg-color': '@accent-color',
+        'search-icon-color': 'white',
+        'search-icon-bg-color': '@primary-color',
         // Set card styles.
         'card-padding-base': '16px',
         'home-page-card-icon-color': '#141414',
         // Set cookie banner styles.
         'cookie-banner-text': '#000',
-        'cookie-banner-back': '@accent-color',
+        'cookie-banner-back': '#FDD44B',
         'link-color': '#0000ee',
         'link-hover-color': '#0000eea8',
       },
