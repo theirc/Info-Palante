@@ -24,11 +24,6 @@ export function getFooterItems(
 ): MenuOverlayItem[] {
   let items: MenuOverlayItem[] = [];
   items.push({
-    key: 'email',
-    label: 'Escríbenos',
-    href: 'mailto:info.palante@rescue.org',
-  });
-  items.push({
     key: 'mapa-servicios',
     label: 'Mapa de servicios del GIFMM',
     href: 'https://mapeo-de-servicios.gifmm-colombia.site/',
