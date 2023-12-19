@@ -24,11 +24,6 @@ export function getFooterItems(
 ): MenuOverlayItem[] {
   let items: MenuOverlayItem[] = [];
   items.push({
-    key: 'email',
-    label: 'Escríbenos',
-    href: 'mailto:info.palante@rescue.org',
-  });
-  items.push({
     key: 'mapa-servicios',
     label: 'Mapa de servicios del GIFMM',
     href: 'https://mapeo-de-servicios.gifmm-colombia.site/',
@@ -40,23 +35,23 @@ export function getFooterItems(
   });
   items.push({
     key: 'ecuador',
-    label: 'Ecuador',
+    label: 'InfoPalante Ecuador',
     href: 'https://www.infopalanteec.org/',
   });
   items.push({
     key: 'centroamerica',
-    label: 'Centroamérica',
+    label: 'Centroamérica: Cuéntanos ',
     href: 'https://www.cuentanos.org/',
   });
   items.push({
     key: 'México',
-    label: 'México',
+    label: 'México: InfoDigna',
     href: 'https://www.infodigna.org',
   });
 
   items.push({
     key: 'ee-uu',
-    label: 'EE.UU',
+    label: 'EE.UU: ImportaMi',
     href: 'https://www.importami.org/',
   });
 
