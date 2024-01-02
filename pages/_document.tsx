@@ -19,13 +19,14 @@ function Document() {
           id="rs_req_Init"
           defer
         ></script>
-        {
-          <script
-            id="ze-snippet"
-            src="https://static.zdassets.com/ekr/snippet.js?key=88e4aff7-e062-40aa-b51e-e684b65a10a2"
-            async
-          ></script>
-        }
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon.png"></link>
+        <meta name="theme-color" content="#0475B5" />
+        <script
+          id="ze-snippet"
+          src="https://static.zdassets.com/ekr/snippet.js?key=88e4aff7-e062-40aa-b51e-e684b65a10a2"
+          async
+        ></script>
       </Head>
       <body>
         <Main />
