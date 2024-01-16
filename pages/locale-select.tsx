@@ -4,6 +4,7 @@
 // displays a page that re/directs to the pathname in the selected locale.
 import { default as LocaleSelectPageBase } from '@ircsignpost/signpost-base/dist/src/locale-select-page';
 import type { Lang } from '@ircsignpost/signpost-base/dist/src/locale-select-page';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 
 import { SITE_TITLE } from '../lib/constants';
@@ -15,6 +16,19 @@ const langs: Lang[] = [
     langLong: 'Español',
   },
 ];
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  if (langs.length === 1) {
+    // If there's only one language, redirect to the homepage in that language
+    return {
+      redirect: {
+        destination: `/${langs[0].langShort}`,
+        permanent: false,
+      },
+    };
+  }
+  return { props: {} };
+};
 
 /** The locale selection page.
  *
