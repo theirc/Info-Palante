@@ -10,6 +10,8 @@ import {
 
 import {
   ABOUT_US_ARTICLE_ID,
+  COUNTRY_SELECTOR,
+  CountrySelectorInterface,
   USE_CAT_SEC_ART_CONTENT_STRUCTURE,
 } from './constants';
 
@@ -77,7 +79,21 @@ export function getMenuItems(
       href: `/articles/${ABOUT_US_ARTICLE_ID}`,
     });
   }
+  addCountrySelector(items, COUNTRY_SELECTOR);
   return items;
+}
+
+function addCountrySelector(
+  items: MenuOverlayItem[],
+  countries: CountrySelectorInterface[]
+) {
+  items.push({
+    key: 0,
+    label: 'Colombia',
+    children: countries.map((country) => {
+      return { key: country.title, label: country.title, href: country.url };
+    }),
+  });
 }
 
 function addMenuItemsCategories(
