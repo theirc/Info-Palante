@@ -21,6 +21,10 @@ const nextConfig = {
         destination: '/:resource/:id',
         permanent: true,
       },
+      {
+        protocol: 'https',
+        hostname: 'directus-irc.azurewebsites.net',
+      },
     ];
   },
   images: {
