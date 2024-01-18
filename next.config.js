@@ -21,10 +21,6 @@ const nextConfig = {
         destination: '/:resource/:id',
         permanent: true,
       },
-      {
-        protocol: 'https',
-        hostname: 'directus-irc.azurewebsites.net',
-      },
     ];
   },
   images: {
@@ -32,6 +28,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'signpost-greece.zendesk.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'directus-irc.azurewebsites.net',
       },
     ],
   },
