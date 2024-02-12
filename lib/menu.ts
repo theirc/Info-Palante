@@ -57,6 +57,12 @@ export function getFooterItems(
     href: 'https://www.importami.org/',
   });
 
+  items.push({
+    key: 'ven-info',
+    label: 'Ven Informado',
+    href: 'https://www.veninformado.pe/',
+  });
+
   return items;
 }
 
