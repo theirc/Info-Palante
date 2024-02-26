@@ -75,6 +75,7 @@ interface HomeProps {
   aboutUsTextHtml: string;
   categories: ZendeskCategory[] | CategoryWithSections[];
   footerLinks?: MenuOverlayItem[];
+  additionalFooterInfo?: string;
 }
 
 const Home: NextPage<HomeProps> = ({
@@ -87,6 +88,7 @@ const Home: NextPage<HomeProps> = ({
   aboutUsTextHtml,
   categories,
   footerLinks,
+  additionalFooterInfo,
 }) => {
   const { publicRuntimeConfig } = getConfig();
 
@@ -107,6 +109,7 @@ const Home: NextPage<HomeProps> = ({
       aboutUsTextHtml={aboutUsTextHtml}
       categories={categories}
       footerLinks={footerLinks}
+      additionalFooterInfo="Si estás en otro país:"
       signpostVersion={publicRuntimeConfig?.version}
       cookieBanner={
         <CookieBanner
