@@ -131,6 +131,7 @@ export default function Service({
             currentLocale={locale}
             locales={LOCALES}
             strings={strings.footerStrings}
+            additionalInfo="Si estás en otro país:"
             links={footerLinks}
             signpostVersion={publicRuntimeConfig?.version}
           />

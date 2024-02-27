@@ -131,6 +131,7 @@ export default function Article({
             strings={strings.footerStrings}
             links={footerLinks}
             signpostVersion={publicRuntimeConfig?.version}
+            additionalInfo="Si necesitas información segura y estás en otro país:"
           />
         ),
         layoutDirection: locale.direction,
