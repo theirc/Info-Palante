@@ -109,7 +109,7 @@ const Home: NextPage<HomeProps> = ({
       aboutUsTextHtml={aboutUsTextHtml}
       categories={categories}
       footerLinks={footerLinks}
-      additionalFooterInfo="Si estás en otro país:"
+      additionalFooterInfo="Si necesitas información segura y estás en otro país:"
       signpostVersion={publicRuntimeConfig?.version}
       cookieBanner={
         <CookieBanner

@@ -125,7 +125,7 @@ export default function Category({
       sectionFilterItems={sectionFilterItems}
       onSectionFilterChange={handleSectionFilterChange}
       footerLinks={footerLinks}
-      additionalFooterInfo="Si estás en otro país:"
+      additionalFooterInfo="Si necesitas información segura y estás en otro país:"
       signpostVersion={publicRuntimeConfig?.version}
     />
   );
