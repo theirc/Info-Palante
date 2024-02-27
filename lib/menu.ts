@@ -59,7 +59,7 @@ export function getFooterItems(
 
   items.push({
     key: 'ven-info',
-    label: 'Ven Informado',
+    label: 'Perú: Veninformado',
     href: 'https://www.veninformado.pe/',
   });
 
